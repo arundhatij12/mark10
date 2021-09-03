@@ -27,17 +27,12 @@ checkButton.addEventListener("click", function validateBillAndCashAmount() {
 
 function calculateChange(amountToBeReturned) {
   
-  // loop over all the available
-  for (let i = 0; i < availableNotes.length; i++) {
-    // no of notes need for the denomination
+  for ( i = 0; i < availableNotes.length; i++) {
+   
     const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
-    // 2010 / 2000 = 1 || 10 / 500 = 0
-
-    // amount left after calculating the number of notes needed
+   
     amountToBeReturned = amountToBeReturned % availableNotes[i];
-    // 2010 % 2000 = 10 || 10 % 500 = 10
-
-    // updating the no of notes in the table for the current amount
+   
     noOfNotes[i].innerText = numberOfNotes;
   }
 }
